@@ -7,23 +7,13 @@ import Breadcrumbs from '../Breadcrumbs';
 import Select from '../Select';
 import Spacer from '../Spacer';
 import ShoeSidebar from '../ShoeSidebar';
+import ShoeGrid from '../ShoeGrid';
 
 const ShoeIndex = ({ sortId, setSortId }) => {
   return (
-    <>
-      <Header>
-        <LeftColumn>
-          <Breadcrumbs>
-            <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
-            <Breadcrumbs.Crumb href="/sale">Sale</Breadcrumbs.Crumb>
-            <Breadcrumbs.Crumb href="/sale/shoes">
-              Shoes
-            </Breadcrumbs.Crumb>
-          </Breadcrumbs>
-          <Spacer size={36} />
-          <ShoeSidebar />
-        </LeftColumn>
-        <HeaderMainColumn>
+    <Wrapper>
+      <MainColumn>
+        <Header>
           <Title>Running</Title>
           <Select
             label="Sort"
@@ -33,23 +23,40 @@ const ShoeIndex = ({ sortId, setSortId }) => {
             <option value="newest">Newest Releases</option>
             <option value="price">Price</option>
           </Select>
-        </HeaderMainColumn>
-      </Header>
-    </>
+        </Header>
+        <Spacer size={28} />
+        <ShoeGrid />
+      </MainColumn>
+      <LeftColumn>
+        <Breadcrumbs>
+          <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
+          <Breadcrumbs.Crumb href="/sale">Sale</Breadcrumbs.Crumb>
+          <Breadcrumbs.Crumb href="/sale/shoes">
+            Shoes
+          </Breadcrumbs.Crumb>
+        </Breadcrumbs>
+        <Spacer size={36} />
+        <ShoeSidebar />
+      </LeftColumn>
+    </Wrapper>
   );
 };
 
-const Header = styled.header`
+const Wrapper = styled.header`
   display: flex;
   align-items: baseline;
+  flex-direction: row-reverse;
 `;
 
 const LeftColumn = styled.div`
   width: 248px;
 `;
 
-const HeaderMainColumn = styled.div`
+const MainColumn = styled.div`
   flex: 1;
+`;
+
+const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
