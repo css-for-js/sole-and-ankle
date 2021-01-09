@@ -24,7 +24,7 @@ const ShoeIndex = ({ sortId, setSortId }) => {
             <option value="price">Price</option>
           </Select>
         </Header>
-        <Spacer size={28} />
+        <Spacer size={34} />
         <ShoeGrid />
       </MainColumn>
       <LeftColumn>
@@ -35,7 +35,7 @@ const ShoeIndex = ({ sortId, setSortId }) => {
             Shoes
           </Breadcrumbs.Crumb>
         </Breadcrumbs>
-        <Spacer size={36} />
+        <Spacer size={42} />
         <ShoeSidebar />
       </LeftColumn>
     </Wrapper>
