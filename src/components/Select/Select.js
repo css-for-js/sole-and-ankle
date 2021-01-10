@@ -5,7 +5,6 @@ import { COLORS, WEIGHTS } from '../../constants';
 import Icon from '../Icon';
 
 const Select = ({ label, value, children, ...delegated }) => {
-  // We want to show the contents of
   const childArray = React.Children.toArray(children);
   const selectedChild = childArray.find(
     (child) => child.props.value === value

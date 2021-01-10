@@ -66,7 +66,6 @@ table {
   isolation: isolate;
 }
 
-
 html, body, #root {
   height: 100%;
 }
