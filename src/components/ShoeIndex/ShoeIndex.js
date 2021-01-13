@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
-import { WEIGHTS, COLORS } from '../../constants';
+import { WEIGHTS } from '../../constants';
 
 import Breadcrumbs from '../Breadcrumbs';
 import Select from '../Select';

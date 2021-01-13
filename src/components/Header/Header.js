@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { COLORS, WEIGHTS } from '../../constants';
 import SearchInput from '../SearchInput';
@@ -75,15 +75,19 @@ const MainHeader = styled.div`
 `;
 
 const Side = styled.div`
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
+  flex: 1;
+
+  &:first-of-type {
+    margin-right: 48px;
+  }
 `;
 
 const Nav = styled.nav`
   display: flex;
   margin: 0 48px;
   gap: 48px;
+  /* TODO: Use this, maybe with clamp? */
+  gap: max(calc(10vw - 60px), 32px);
 `;
 
 const NavLink = styled.a`
