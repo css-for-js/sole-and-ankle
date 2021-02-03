@@ -30,7 +30,6 @@ const Wrapper = styled.div`
 
 const MarketingMessage = styled.span`
   color: ${COLORS.white};
-  margin-right: auto;
 `;
 
 const HelpLink = styled.a`
