@@ -31,8 +31,6 @@ const MainHeader = styled.div`
   border-bottom: 1px solid ${COLORS.gray[300]};
 `;
 
-const Side = styled.div``;
-
 const Nav = styled.nav``;
 
 const NavLink = styled.a`
