@@ -2,24 +2,15 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 import { COLORS, WEIGHTS } from '../../constants';
-import SearchInput from '../SearchInput';
-import UnstyledButton from '../UnstyledButton';
-import Icon from '../Icon';
 import Logo from '../Logo';
+import SuperHeader from '../SuperHeader';
 
 const Header = () => {
+  // Our site features two visual headers, but they should be
+  // grouped semantically as a single header.
   return (
     <header>
-      <SuperHeader>
-        <MarketingMessage>
-          Free shipping on domestic orders over $75!
-        </MarketingMessage>
-        <SearchInput />
-        <HelpLink href="/help">Help</HelpLink>
-        <UnstyledButton>
-          <Icon id="shopping-bag" strokeWidth={1} />
-        </UnstyledButton>
-      </SuperHeader>
+      <SuperHeader />
       <MainHeader>
         <Side>
           <Logo />
@@ -37,33 +28,6 @@ const Header = () => {
     </header>
   );
 };
-
-const SuperHeader = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 24px;
-  padding: 0px 32px;
-  height: 40px;
-  font-size: 0.875rem;
-  color: ${COLORS.gray[300]};
-  background-color: ${COLORS.gray[900]};
-`;
-
-const MarketingMessage = styled.span`
-  color: ${COLORS.white};
-  margin-right: auto;
-`;
-
-const HelpLink = styled.a`
-  color: inherit;
-  text-decoration: none;
-  outline-offset: 2px;
-
-  &:not(:focus-visible) {
-    outline: none;
-  }
-`;
 
 const MainHeader = styled.div`
   display: flex;

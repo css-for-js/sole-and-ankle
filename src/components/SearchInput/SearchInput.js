@@ -28,10 +28,6 @@ const Input = styled.input`
   color: ${COLORS.gray[100]};
   outline-offset: 4px;
 
-  &:focus-visible {
-    outline: none;
-  }
-
   &::placeholder {
     color: ${COLORS.gray[500]};
   }
