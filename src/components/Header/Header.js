@@ -37,7 +37,6 @@ const Nav = styled.nav``;
 
 const NavLink = styled.a`
   font-size: 1.125rem;
-  line-height: 72px;
   text-transform: uppercase;
   text-decoration: none;
   color: ${COLORS.gray[900]};
