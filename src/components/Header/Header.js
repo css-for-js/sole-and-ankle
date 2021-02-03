@@ -30,29 +30,13 @@ const Header = () => {
 };
 
 const MainHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  height: 72px;
   padding: 0 32px;
   border-bottom: 1px solid ${COLORS.gray[300]};
 `;
 
-const Side = styled.div`
-  flex: 1;
+const Side = styled.div``;
 
-  &:first-of-type {
-    margin-right: 48px;
-  }
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  margin: 0 48px;
-  gap: 48px;
-  /* TODO: Use this, maybe with clamp? */
-  gap: max(calc(10vw - 60px), 32px);
-`;
+const Nav = styled.nav``;
 
 const NavLink = styled.a`
   font-size: 1.125rem;
