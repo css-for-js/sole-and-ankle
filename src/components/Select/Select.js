@@ -32,7 +32,14 @@ const Select = ({ label, value, children, ...delegated }) => {
   );
 };
 
-const Wrapper = styled.label``;
+const Wrapper = styled.label`
+  /*SORT DROPDOWN*/
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: flex-end;
+  margin-top: -8px;
+`;
 
 const VisibleLabel = styled.span`
   color: ${COLORS.gray[700]};
@@ -41,6 +48,7 @@ const VisibleLabel = styled.span`
 
 const SelectWrapper = styled.div`
   position: relative;
+ 
 `;
 
 const NativeSelect = styled.select`

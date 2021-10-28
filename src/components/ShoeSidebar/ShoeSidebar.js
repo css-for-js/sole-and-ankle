@@ -23,7 +23,10 @@ const Sidebar = () => {
   );
 };
 
-const Wrapper = styled.aside``;
+const Wrapper = styled.aside`
+/*LIST OF SHOES*/
+
+`;
 
 const Link = styled.a`
   display: block;
@@ -31,6 +34,7 @@ const Link = styled.a`
   font-weight: ${WEIGHTS.medium};
   color: ${COLORS.gray[900]};
   line-height: 2;
+  
 `;
 
 const ActiveLink = styled(Link)`

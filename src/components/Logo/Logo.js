@@ -17,8 +17,12 @@ const Link = styled.a`
 `;
 
 const Wrapper = styled.h1`
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: ${WEIGHTS.bold};
+  display: flex;
+  padding-right: 72px;
+  
+
 `;
 
 export default Logo;

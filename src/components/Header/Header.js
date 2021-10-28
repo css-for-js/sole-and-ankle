@@ -29,19 +29,36 @@ const Header = () => {
 const MainHeader = styled.div`
   padding: 0 32px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+   display:flex;
+   align-items:center;
+   padding: 20px;
+
+
+
+
 `;
 
-const Nav = styled.nav``;
+const Nav = styled.nav`
+display: flex;
+gap: 3rem;
+flex-grow: .75;
+justify-content: center;
+
+`;
 
 const NavLink = styled.a`
-  font-size: 1.125rem;
+  font-size: .9rem;
   text-transform: uppercase;
   text-decoration: none;
   color: ${COLORS.gray[900]};
-  font-weight: ${WEIGHTS.medium};
+  font-weight: ${WEIGHTS.normal};
+
+
+ 
 
   &:first-of-type {
     color: ${COLORS.secondary};
+    font-weight: ${WEIGHTS.bold};
   }
 `;
 
