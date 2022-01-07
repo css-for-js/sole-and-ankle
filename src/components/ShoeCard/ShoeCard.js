@@ -6,62 +6,73 @@ import { formatPrice, pluralize, isNewShoe } from '../../utils';
 import Spacer from '../Spacer';
 
 const ShoeCard = ({
-  slug,
-  name,
-  imageSrc,
-  price,
-  salePrice,
-  releaseDate,
-  numOfColors,
-}) => {
-  // There are 3 variants possible, based on the props:
-  //   - new-release
-  //   - on-sale
-  //   - default
-  //
-  // Any shoe released in the last month will be considered
-  // `new-release`. Any shoe with a `salePrice` will be
-  // on-sale. In theory, it is possible for a shoe to be
-  // both on-sale and new-release, but in this case, `on-sale`
-  // will triumph and be the variant used.
-  // prettier-ignore
-  const variant = typeof salePrice === 'number'
-    ? 'on-sale'
-    : isNewShoe(releaseDate)
-      ? 'new-release'
-      : 'default'
+                      slug,
+                      name,
+                      imageSrc,
+                      price,
+                      salePrice,
+                      releaseDate,
+                      numOfColors,
+                  }) => {
+    // There are 3 variants possible, based on the props:
+    //   - new-release
+    //   - on-sale
+    //   - default
+    //
+    // Any shoe released in the last month will be considered
+    // `new-release`. Any shoe with a `salePrice` will be
+    // on-sale. In theory, it is possible for a shoe to be
+    // both on-sale and new-release, but in this case, `on-sale`
+    // will triumph and be the variant used.
+    // prettier-ignore
+    const variant = typeof salePrice === 'number'
+        ? 'on-sale'
+        : isNewShoe(releaseDate)
+            ? 'new-release'
+            : 'default';
 
-  return (
-    <Link href={`/shoe/${slug}`}>
-      <Wrapper>
-        <ImageWrapper>
-          <Image alt="" src={imageSrc} />
-        </ImageWrapper>
-        <Spacer size={12} />
-        <Row>
-          <Name>{name}</Name>
-          <Price>{formatPrice(price)}</Price>
-        </Row>
-        <Row>
-          <ColorInfo>{pluralize('Color', numOfColors)}</ColorInfo>
-        </Row>
-      </Wrapper>
-    </Link>
-  );
+    return (
+        <Link href={`/shoe/${slug}`}>
+            <Wrapper>
+                <ImageWrapper>
+                    <Image alt="" src={imageSrc} />
+                </ImageWrapper>
+                <SalePrice color={variant === 'on-sale' ? COLORS.secondary : COLORS.primary}>{variant}</SalePrice>
+                <Spacer size={12} />
+                <Row>
+                    <Name>{name}</Name>
+                    <Price>{formatPrice(price)}</Price>
+                </Row>
+                <Row>
+                    <ColorInfo>{pluralize('Color', numOfColors)}</ColorInfo>
+                </Row>
+            </Wrapper>
+        </Link>
+    );
 };
 
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
+  flex: 1;
 `;
 
-const Wrapper = styled.article``;
-
-const ImageWrapper = styled.div`
+const Wrapper = styled.article`
+  width: 340px;
   position: relative;
 `;
 
-const Image = styled.img``;
+const ImageWrapper = styled.div`
+  position: relative;
+  border-radius: 16px 16px 4px 4px;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+`;
 
 const Row = styled.div`
   font-size: 1rem;
@@ -81,6 +92,13 @@ const ColorInfo = styled.p`
 const SalePrice = styled.span`
   font-weight: ${WEIGHTS.medium};
   color: ${COLORS.primary};
+  position: absolute;
+  top: 10px;
+  right: -5px;
+  background-color: ${p => p.color};
+  color: ${COLORS.white};
+  padding: 8px 12px;
+  border-radius: 4px;
 `;
 
 export default ShoeCard;
