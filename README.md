@@ -27,6 +27,14 @@ _Note that we're only focusing on the design._ The links and inputs don't do any
 > tokens can be found in `/src/constants`. The custom font is
 > Raleway, from Google Fonts.
 
+## Troubleshooting
+
+If you run into problems running a local development server, check out our [Troubleshooting Guide](https://courses.joshwcomeau.com/troubleshooting) on the course platform.
+
+This guide addresses the common `Digital Envelope Routine` error you may have seen.
+
+---
+
 ## Exercise 1: Superheader
 
 Let's build the “Superheader” a thin grey strip that runs along the top of the page:
