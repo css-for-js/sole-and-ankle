@@ -68,7 +68,13 @@ const Link = styled.a`
   color: inherit;
 `;
 
-const Wrapper = styled.article``;
+const Wrapper = styled.article`
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    scale: 1.05;
+  }
+`;
 
 const ImageWrapper = styled.div`
   position: relative;
@@ -118,6 +124,16 @@ const Flag = styled.div`
   border-radius: 2px;
   // color
   color: ${COLORS.white};
+
+  transition: all 1s ease-in-out;
+
+  &:hover {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 15%;
+  }
 `;
 
 const SaleFlag = styled(Flag)`
