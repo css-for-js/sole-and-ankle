@@ -40,11 +40,13 @@ const ShoeCard = ({
         <Spacer size={12} />
         <Row>
           <Name>{name}</Name>
-          <Price>{formatPrice(price)}</Price>
+          <Price variant={variant}>{formatPrice(price)}</Price>
         </Row>
         <Row>
           <ColorInfo>{pluralize('Color', numOfColors)}</ColorInfo>
+          <SalePrice variant={variant}>{formatPrice(salePrice)}</SalePrice>
         </Row>
+        <Badge variant={variant}>{variant === "new-release" ? "Just released!" : "Sale"}</Badge>
       </Wrapper>
     </Link>
   );
@@ -53,18 +55,43 @@ const ShoeCard = ({
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
+  flex: 1 1 100%;
+
+  @media (min-width: 900px) {
+    flex: 1 1 300px;
+    max-width: none;
+  }
+
+  @media (min-width: 1632px) {
+    flex: 1 1 300px;
+    max-width: 320px;
+  }
+
+  @media (min-width: 1899px) {
+    flex: 1 1 20%;
+    max-width: 367px;
+  }
+
 `;
 
-const Wrapper = styled.article``;
-
-const ImageWrapper = styled.div`
+const Wrapper = styled.article` 
   position: relative;
 `;
 
-const Image = styled.img``;
+const ImageWrapper = styled.div`
+  position: relative;
+  border-radius: 16px 16px 4px 4px;
+  overflow: hidden;
+`;
+
+const Image = styled.img`
+  width: 100%;
+`;
 
 const Row = styled.div`
   font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Name = styled.h3`
@@ -72,7 +99,11 @@ const Name = styled.h3`
   color: ${COLORS.gray[900]};
 `;
 
-const Price = styled.span``;
+const Price = styled.span`
+  text-decoration: ${p => p.variant === 'on-sale' && 'line-through'};
+  color: ${p => p.variant === 'on-sale' && COLORS.gray[700]};
+`;
+
 
 const ColorInfo = styled.p`
   color: ${COLORS.gray[700]};
@@ -81,6 +112,20 @@ const ColorInfo = styled.p`
 const SalePrice = styled.span`
   font-weight: ${WEIGHTS.medium};
   color: ${COLORS.primary};
+  display: ${p => p.variant !== 'on-sale' && 'none'};
 `;
+
+const Badge = styled.div`
+  display: ${p => p.variant === 'default' && 'none'};
+  font-size: 14px;
+  top: 8px;
+  right: -4px;
+  position: absolute;
+  padding: 4px 8px;
+  background-color: ${p => p.variant === 'new-release' ? COLORS.secondary : COLORS.primary};
+  color: ${COLORS.white};
+  font-weight: ${WEIGHTS.medium};
+  border-radius: 2px;
+`
 
 export default ShoeCard;
