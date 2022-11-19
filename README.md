@@ -49,6 +49,12 @@ Continuing on down, let's tackle the main header:
 
 ![Close-up screenshot of the header and superheader](./docs/exercise-2-solution.png)
 
+The trickiest part of this exercise is the _position of the main navigation_. We want it to be perfectly centered within the container:
+
+![Screenshot showing the position of the navigation within the header](./docs/nav-position.png)
+
+This is a thorny problem, and it's not something we've explicitly seen in the course. Give it your best shot, but please don't be discouraged if you can't figure it out!
+
 ## Exercise 3: Shell
 
 Next up, we want to tackle the "framing" around the shoe grid — the sidebar and title/filter.
