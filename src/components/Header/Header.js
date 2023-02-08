@@ -26,12 +26,23 @@ const Header = () => {
   );
 };
 
+
 const MainHeader = styled.div`
-  padding: 0 32px;
+  position: relative;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 8px 32px;
   border-bottom: 1px solid ${COLORS.gray[300]};
 `;
 
-const Nav = styled.nav``;
+const Nav = styled.nav` 
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+`;
 
 const NavLink = styled.a`
   font-size: 1.125rem;
