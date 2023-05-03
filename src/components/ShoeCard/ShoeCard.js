@@ -5,6 +5,16 @@ import { COLORS, WEIGHTS } from '../../constants';
 import { formatPrice, pluralize, isNewShoe } from '../../utils';
 import Spacer from '../Spacer';
 
+const bannerColourMap = {
+  'on-sale': COLORS.primary,
+  'new-release': COLORS.secondary,
+}
+
+const bannerTextMap = {
+  'on-sale': 'Sale',
+  'new-release': 'Just Released!',
+};
+
 const ShoeCard = ({
   slug,
   name,
@@ -31,11 +41,13 @@ const ShoeCard = ({
       ? 'new-release'
       : 'default'
 
+
   return (
     <Link href={`/shoe/${slug}`}>
       <Wrapper>
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
+          {variant !== 'default' && <Banner variant={variant}>{bannerTextMap[variant]}</Banner>}
         </ImageWrapper>
         <Spacer size={12} />
         <Row>
@@ -64,15 +76,25 @@ const Wrapper = styled.article`
 
 const ImageWrapper = styled.div`
   position: relative;
-  border-radius: 16px 16px 4px 4px;
-  overflow: hidden;
-
+  
   & img {
     width: 100%;
   }
+  `;
+  
+const Image = styled.img`
+  border-radius: 16px 16px 4px 4px;
 `;
 
-const Image = styled.img``;
+const Banner = styled.div`
+  position: absolute;
+  top: 12px;
+  right: -4px;
+  padding: 8px 16px;
+  color: ${COLORS.white};
+  background-color: ${(p) => bannerColourMap[p.variant]};
+`;
+
 
 const Row = styled.div`
   font-size: 1rem;
