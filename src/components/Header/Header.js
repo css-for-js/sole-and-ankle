@@ -9,7 +9,7 @@ const Header = () => {
   // Our site features two visual headers, but they should be
   // grouped semantically as a single header.
   return (
-    <header>
+    <HeaderContainer>
       <SuperHeader />
       <MainHeader>
         <Spacer>
@@ -25,9 +25,15 @@ const Header = () => {
         </Nav>
         <Spacer />
       </MainHeader>
-    </header>
+    </HeaderContainer>
   );
 };
+
+const HeaderContainer = styled.header`
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+`;
 
 const MainHeader = styled.div`
   padding: 0 32px;
@@ -35,6 +41,8 @@ const MainHeader = styled.div`
   display: flex;
   align-items: center;
   height: 72px;
+  background-color: ${COLORS.white};
+  opacity: 0.9;
 `;
 
 const Nav = styled.nav`

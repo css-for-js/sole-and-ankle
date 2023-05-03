@@ -17,8 +17,9 @@ const App = () => {
   );
 };
 
+// 112px is the height of the fixed header
 const Main = styled.main`
-  padding: 64px 32px;
+  padding: calc(112px + 64px) 32px;
 `;
 
 export default App;
