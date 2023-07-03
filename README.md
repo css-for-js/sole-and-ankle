@@ -83,11 +83,18 @@ In a future module, we'll revisit this and see how CSS Grid can help us out :)
 
 ## 4B: Final touches
 
-Our sneaker store is in pretty good shape, but there's a couple small bits of polish missing: the "New Release" / "Sale" flag, and the sale price detail.
+Our sneaker store is in pretty good shape, but there's two small details missing:
 
-_NOTE:_ This exercise has minimal flexbox implications, and is mainly about revisiting lessons learned in the previous modules (including positioned layout and styled-components). Feel free to skip it if you'd prefer!
+1. The “Sale” and “Just Released” flags.
+1. The crossed-out prices, for items that are on sale.
+
+Inside `ShoeCard.js`, you'll find a `variant` variable you can use to figure out which flag, if any, needs to be rendered. It's up to you to create the flag, using styled-components.
+
+For the crossed-out prices, you can use the `price` and `salePrice` props.
 
 ![Screenshot of the store, with the final details added](./docs/exercise-4b-solution.png)
+
+_NOTE:_ This exercise has minimal flexbox implications, and is mainly about revisiting lessons learned in the previous modules (including positioned layout and styled-components). Feel free to skip it if you'd prefer!
 
 ## To be continued!
 
